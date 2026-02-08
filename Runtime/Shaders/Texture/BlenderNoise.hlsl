@@ -318,6 +318,44 @@ float fractal_noise(float4 p, float detail, float roughness, float lacunarity)
 }
 
 // ============================================================
+// noise_fbm - fBM using signed noise
+// Used by Wave texture and other nodes that need the Blender-style fBM.
+// When normalize=true, output is in [0, 1]; otherwise raw sum.
+//
+// Reference: gpu_shader_material_fractal_noise.glsl
+// ============================================================
+
+float noise_fbm(float3 co, float detail, float roughness, float lacunarity,
+                float offset, float gain, bool norm)
+{
+    float3 p = co;
+    float fscale = 1.0;
+    float amp = 1.0;
+    float maxamp = 0.0;
+    float sum = 0.0;
+
+    int n = (int)detail;
+    for (int i = 0; i <= n; i++)
+    {
+        float t = snoise(fscale * p);
+        sum += t * amp;
+        maxamp += amp;
+        amp *= roughness;
+        fscale *= lacunarity;
+    }
+    float rmd = detail - floor(detail);
+    if (rmd != 0.0)
+    {
+        float t = snoise(fscale * p);
+        float sum2 = sum + t * amp;
+        return norm ?
+            lerp(0.5 * sum / maxamp + 0.5, 0.5 * sum2 / (maxamp + amp) + 0.5, rmd) :
+            lerp(sum, sum2, rmd);
+    }
+    return norm ? 0.5 * sum / maxamp + 0.5 : sum;
+}
+
+// ============================================================
 // Public API Functions
 // These are the entry points for Unity Shader Graph Custom Function Nodes
 // ============================================================

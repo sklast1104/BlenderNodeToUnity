@@ -307,4 +307,26 @@ float3 hash_float_to_vec3(float k)
                   hash_float2_to_float(float2(k, 2.0)));
 }
 
+// Vector to vector hash functions (used by White Noise and other nodes)
+float3 hash_vec2_to_vec3(float2 k)
+{
+    return float3(hash_float2_to_float(k),
+                  hash_float3_to_float(float3(k, 1.0)),
+                  hash_float3_to_float(float3(k, 2.0)));
+}
+
+float3 hash_vec3_to_vec3(float3 k)
+{
+    return float3(hash_float3_to_float(k),
+                  hash_float4_to_float(float4(k, 1.0)),
+                  hash_float4_to_float(float4(k, 2.0)));
+}
+
+float3 hash_vec4_to_vec3(float4 k)
+{
+    return float3(hash_float4_to_float(k.xyzw),
+                  hash_float4_to_float(k.zxwy),
+                  hash_float4_to_float(k.wzyx));
+}
+
 #endif // BLENDER_HASH_INCLUDED
