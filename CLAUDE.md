@@ -19,12 +19,12 @@ Blender의 오픈소스 GPU 쉐이더 노드 GLSL 구현체를 Unity HLSL로 정
 
 ## Completed (Phase 1)
 - [x] BlenderCommon.hlsl - 상수, 좌표변환, 매크로
-- [x] BlenderHash.hlsl - Jenkins/PCG 해시 함수
+- [x] BlenderHash.hlsl - Jenkins/PCG 해시 + signed PCG + int/float→vec 해시
 - [x] BlenderMathBase.hlsl - safe_divide, fade, interpolation helpers
 - [x] BlenderNoise.hlsl - Perlin Noise 1D-4D, fBM, Noise Texture 노드
+- [x] BlenderVoronoi.hlsl - Voronoi F1/F2/Smooth F1/DistToEdge/NSphere 1D-4D, Fractal Voronoi
 
 ## TODO (Phase 2+)
-- [ ] BlenderVoronoi.hlsl - Voronoi F1/F2/Smooth, distance metrics
 - [ ] BlenderMixColor.hlsl - 25+ blend modes
 - [ ] BlenderMapping.hlsl - Point/Texture/Vector/Normal mapping
 - [ ] BlenderVectorMath.hlsl - Vector math operations

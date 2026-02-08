@@ -42,6 +42,22 @@ float safe_divide(float a, float b, float fallback)
     return (b != 0.0) ? a / b : fallback;
 }
 
+// Scalar divisor overloads (divide vector by scalar)
+float2 safe_divide(float2 a, float b)
+{
+    return (b != 0.0) ? a / b : float2(0.0, 0.0);
+}
+
+float3 safe_divide(float3 a, float b)
+{
+    return (b != 0.0) ? a / b : float3(0.0, 0.0, 0.0);
+}
+
+float4 safe_divide(float4 a, float b)
+{
+    return (b != 0.0) ? a / b : float4(0.0, 0.0, 0.0, 0.0);
+}
+
 // ============================================================
 // Safe Modulo (matches Blender's behavior, handles negative values)
 // GLSL mod() vs HLSL fmod(): different sign behavior
