@@ -1,0 +1,36 @@
+{
+  "name": "com.sklast.blendershader",
+  "displayName": "Blender Shader To Unity",
+  "version": "0.1.0",
+  "unity": "2021.3",
+  "description": "Accurate port of Blender's GLSL shader node implementations to Unity HLSL. Enables faithful material translation from Blender to Unity Shader Graph using Custom Function Nodes backed by Blender's original algorithms.",
+  "keywords": [
+    "shader",
+    "blender",
+    "hlsl",
+    "procedural",
+    "texture",
+    "noise",
+    "voronoi",
+    "shader-graph"
+  ],
+  "license": "GPL-3.0-or-later",
+  "author": {
+    "name": "sklast1104",
+    "url": "https://github.com/sklast1104"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sklast1104/BlenderNodeToUnity.git"
+  },
+  "dependencies": {
+    "com.unity.shadergraph": "12.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "Basic Examples",
+      "description": "Basic usage examples of Blender shader nodes in Unity Shader Graph",
+      "path": "Samples~/BasicExamples"
+    }
+  ]
+}
