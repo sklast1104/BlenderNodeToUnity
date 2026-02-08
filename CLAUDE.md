@@ -27,16 +27,16 @@ Blender의 오픈소스 GPU 쉐이더 노드 GLSL 구현체를 Unity HLSL로 정
 - [x] BlenderChecker.hlsl - Checker Texture
 - [x] BlenderGradient.hlsl - Gradient Texture (7 types)
 - [x] BlenderWave.hlsl - Wave Texture (Bands/Rings, 3 profiles)
+- [x] BlenderColorUtils.hlsl (Core) - RGB/HSV/HSL conversions, linear/sRGB
+- [x] BlenderMixColor.hlsl - 19 blend modes (Mix~LinearLight + HSV modes)
+- [x] BlenderMapRange.hlsl - Map Range (Linear/Stepped/SmoothStep/SmootherStep + Vector)
+- [x] BlenderClamp.hlsl - Clamp (MinMax/Range)
 
 ## TODO (Phase 2+)
-- [ ] BlenderMixColor.hlsl - 25+ blend modes
 - [ ] BlenderMapping.hlsl - Point/Texture/Vector/Normal mapping
 - [ ] BlenderVectorMath.hlsl - Vector math operations
-- [ ] BlenderColorUtils.hlsl (Core) - RGB/HSV/HSL conversions
 - [ ] BlenderHueSatVal.hlsl - Hue/Saturation/Value
 - [ ] BlenderBrightContrast.hlsl - Brightness/Contrast
-- [ ] BlenderMapRange.hlsl - Map Range
-- [ ] BlenderClamp.hlsl - Clamp
 - [ ] SubGraph 파일 생성 (Shader Graph에서 시각적 노드로 사용)
 
 ## GLSL→HLSL Key Rules
