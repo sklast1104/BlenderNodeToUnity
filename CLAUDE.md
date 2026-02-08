@@ -32,11 +32,12 @@ Blender의 오픈소스 GPU 쉐이더 노드 GLSL 구현체를 Unity HLSL로 정
 - [x] BlenderMapRange.hlsl - Map Range (Linear/Stepped/SmoothStep/SmootherStep + Vector)
 - [x] BlenderClamp.hlsl - Clamp (MinMax/Range)
 
+- [x] BlenderHueSatVal.hlsl - Hue/Saturation/Value
+- [x] BlenderBrightContrast.hlsl - Brightness/Contrast
+- [x] BlenderMapping.hlsl - Point/Texture/Vector/Normal mapping (Euler XYZ rotation)
+- [x] BlenderVectorMath.hlsl - 27 vector math operations
+
 ## TODO (Phase 2+)
-- [ ] BlenderMapping.hlsl - Point/Texture/Vector/Normal mapping
-- [ ] BlenderVectorMath.hlsl - Vector math operations
-- [ ] BlenderHueSatVal.hlsl - Hue/Saturation/Value
-- [ ] BlenderBrightContrast.hlsl - Brightness/Contrast
 - [ ] SubGraph 파일 생성 (Shader Graph에서 시각적 노드로 사용)
 
 ## GLSL→HLSL Key Rules
